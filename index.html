@@ -24,7 +24,7 @@
     <div>
       <input type="radio" class="btn-check" name="coffeePlace" id="Ostankino" value="0" autocomplete="off" required>
       <label class="btn" for="Ostankino">Останкино</label>
-      <input type="radio" class="btn-check" name="coffeePlace" id="Ostankino" value="0" autocomplete="off" required>
+      <input type="radio" class="btn-check" name="coffeePlace" id="Ostankino" style="display: none;" value="0" autocomplete="off" required>
       <label class="btn" for="Ostankino">Останкино</label>
     </div>
     <hr/>
@@ -58,12 +58,10 @@
       <input type="number" class="form-control" id="countOrders" required disabled>
     </div>
     <div class="mb-3">
-      <span class="badge text-bg-primary">Обновлено</span>
       <label for="averageBill" class="form-label">Средний чек</label>
       <input type="number" class="form-control" id="averageBill" required disabled>
     </div>
     <div class="mb-3">
-      <span class="badge text-bg-primary">Обновлено</span>
       <label for="percentEarnMoneyLast" class="form-label">Прирост выручки</label>
       <div class="input-group">
         <button class="btn btn-success fw-bold" type="button" onclick="changePercentEarnMoney()" id="percentEarnMoneyLastButton">+</button>

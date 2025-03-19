@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="card.png" />
+    <title>Генератор отчёта</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="moment.js"></script>
+</head>
+<body>
+  <div class="pt-4 pb-3" style="background: #192DA8; color: #FFF">
+    <h1 class="container">Генератор отчёта</h1>
+  </div>
+  <div class="container mt-4">
+  <form class="form" name="form">
+    <h3>Выбор точки</h3>
+    <div>
+      <input type="radio" class="btn-check" name="coffeePlace" id="Ostankino" value="3" autocomplete="off" required>
+      <label class="btn" for="Ostankino">Останкино</label>
+    </div>
+    <hr/>
+    <div class="mb-2">
+      <h2 class="mb-0">Motivation</h2>
+      <span id="motivationTextHelper" style="color: #868686; text-transform: lowercase">автоматически заполнится при выборе точки</span>
+    </div>
+    <div class="mb-3">
+      <label for="countLikes" class="form-label">Лайки</label>
+      <input type="number" class="form-control" id="countLikes" required disabled>
+    </div>
+    <div class="mb-3">
+      <label for="countDislikes" class="form-label">Дизлайки</label>
+      <input type="number" class="form-control" id="countDislikes" required disabled>
+    </div>
+    <div class="mb-3">
+      <label for="averageSpeed" class="form-label">Средняя скорость</label>
+      <input type="time" style="text-align: left" class="form-control" id="averageSpeed" required disabled>
+    </div>
+    <div class="mb-3">
+      <label for="longOrders" class="form-label">Долгие заказы</label>
+      <input type="number" class="form-control" id="longOrders" required disabled>
+    </div>
+    <h2>Dodo IS</h2>
+    <div class="mb-3">
+      <label for="earnMoney" class="form-label">Выручка</label>
+      <input type="number" class="form-control" id="earnMoney" required disabled>
+    </div>
+    <div class="mb-3">
+      <label for="countOrders" class="form-label">Количество заказов</label>
+      <input type="number" class="form-control" id="countOrders" required disabled>
+    </div>
+    <div class="mb-3">
+      <span class="badge text-bg-primary">Обновлено</span>
+      <label for="averageBill" class="form-label">Средний чек</label>
+      <input type="number" class="form-control" id="averageBill" required disabled>
+    </div>
+    <div class="mb-3">
+      <span class="badge text-bg-primary">Обновлено</span>
+      <label for="percentEarnMoneyLast" class="form-label">Прирост выручки</label>
+      <div class="input-group">
+        <button class="btn btn-success fw-bold" type="button" onclick="changePercentEarnMoney()" id="percentEarnMoneyLastButton">+</button>
+        <input id="percentEarnMoneyLast" type="number" min="0" max="100" class="form-control" required>
+        <span class="input-group-text">%</span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="newGuests" class="form-label">Количество новых гостей</label>
+      <input type="number" class="form-control" id="newGuests" required>
+    </div>
+    <div class="mb-3">
+      <label for="oldGuests" class="form-label">Количество старых гостей</label>
+      <input type="number" class="form-control" id="oldGuests" required>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="submit" id="sendFormButton" class="btn btn-primary btn-lg mb-5" disabled>
+        Сгенерировать
+      </button>
+    </div>
+  </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Скопировано в буфер обмена!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label for="generatedText" class="form-label d-none"></label>
+            <textarea class="form-control" readonly id="generatedText" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger container" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

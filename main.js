@@ -89,15 +89,6 @@ function generateText() {
 
     switch (coffeePlace) {
         case 0:
-            generatedText += "W-Plaza "
-            break
-        case 1:
-            generatedText += "Лефорт "
-            break
-        case 2:
-            generatedText += "Барклай "
-            break
-        case 3:
             generatedText += "Останкино "
     }
 

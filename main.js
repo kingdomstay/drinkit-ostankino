@@ -1,8 +1,8 @@
 const apiUrl = "https://drinkit-mobile-api.drinkit.dodois.io/motivation/v2/GetMotivationBoard?countryId=643&unitId="
-const motivationsUUID = ["4e9a81d7-8615-84f2-11ef-2fa890b31afa"]
+const motivationsUUID = ["4e9a81d7-8615-84f2-11ef-2fa890b31afa", "11f0065d-a209-0ba5-c332-0867763b0530"]
 
 const openApiUrl = "https://publicapi.drinkit.dodois.io/ru/api/v1/OperationalStatisticsByUnit/"
-const openUIDs = ["139629"]
+const openUIDs = ["139629", "139688"]
 
 const formValues = document.forms.form
 const form = document.querySelector('.form')
@@ -90,6 +90,8 @@ function generateText() {
     switch (coffeePlace) {
         case 0:
             generatedText += "Останкино "
+        case 1:
+            generatedText += "Мясницкая "
     }
 
     generatedText += moment().format('DD.MM.YY:');

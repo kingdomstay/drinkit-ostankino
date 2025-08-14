@@ -90,6 +90,7 @@ function generateText() {
     switch (coffeePlace) {
         case 0:
             generatedText += "Останкино "
+            break;
         case 1:
             generatedText += "Мясницкая "
     }
@@ -153,3 +154,4 @@ function changePercentEarnMoney() {
         percentEarnMoneyLastButton.classList.toggle('btn-danger')
     }
 }
+
